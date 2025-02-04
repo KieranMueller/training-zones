@@ -1,0 +1,86 @@
+.container {
+  border: 1px solid black;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  background-color: var(--dark-grey);
+  color: var(--soft-white);
+}
+
+img {
+  width: 25px;
+}
+
+.arrow {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.pulse {
+  animation: 1s pulse infinite;
+}
+
+@keyframes pulse {
+  25% {
+    scale: 1.1;
+    rotate: 10deg;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.watts {
+  margin-left: 4px;
+}
+
+input {
+  padding: 3px 5px;
+  font-size: 16px;
+  width: 100px;
+  border-radius: 4px;
+}
+
+.bw {
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
+
+.blue {
+  color: var(--c-blue);
+}
+
+.green {
+  color: var(--c-green);
+}
+
+.orange {
+  color: var(--c-orange);
+}
+
+.gold {
+  color: var(--c-gold);
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 10px;
+    * {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .container {
+    * {
+      font-size: 1.1rem;
+    }
+  }
+}

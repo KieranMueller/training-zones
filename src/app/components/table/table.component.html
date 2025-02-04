@@ -1,0 +1,60 @@
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="zone">
+      <th mat-header-cell *matHeaderCellDef>Zone</th>
+      <td mat-cell *matCellDef="let data">{{ data.position }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let data">{{ data.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="hr">
+      <th mat-header-cell *matHeaderCellDef>
+        % of Max HR
+        <button (click)="toggleHrView()">
+          toggle: {{ isLowerHrView ? "high" : "low" }}
+        </button>
+      </th>
+      @if (!isLowerHrView) {
+      <td class="hr-col" mat-cell *matCellDef="let data">
+        {{ data.hr }}
+        @if (maxHr) {
+        <p class="bold">{{ data.myHr }}</p>
+        }
+      </td>
+      } @else {
+      <td class="hr-col" mat-cell *matCellDef="let data">
+        {{ data.hr }}
+        @if (maxHr) {
+        <p class="bold">{{ data.myHr }}</p>
+        }
+      </td>
+      }
+    </ng-container>
+    <ng-container matColumnDef="power">
+      <th mat-header-cell *matHeaderCellDef>% of FTP</th>
+      <td mat-cell *matCellDef="let data">
+        {{ data.ftp }}
+        @if (ftp) {
+        <p class="bold">{{ data.myFtp }}</p>
+        }
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="timeInZone">
+      <th mat-header-cell *matHeaderCellDef>Time in Zone</th>
+      <td mat-cell *matCellDef="let data">{{ data.timeInZone }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td class="description-col" mat-cell *matCellDef="let data">
+        {{ data.description }}
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      [ngClass]="getRowClass(row)"
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+  </table>
+</div>

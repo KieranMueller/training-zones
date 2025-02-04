@@ -1,0 +1,80 @@
+table {
+  border: 1px solid black;
+  font-weight: 500;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+thead,
+tr {
+  background-color: var(--soft-white);
+}
+
+tr {
+  transition: 0.2s;
+}
+
+@media screen and (min-width: 650px) {
+  tr:not(thead tr):hover {
+    scale: 1.03;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.467);
+  }
+}
+
+.description-col {
+  max-width: 300px;
+  padding: 5px;
+}
+
+.hr-col {
+  padding: 10px;
+}
+
+.active-recovery {
+  background-color: var(--grey);
+}
+
+.endurance {
+  background-color: var(--blue);
+}
+
+.tempo {
+  background-color: var(--green);
+}
+
+.threshold {
+  background-color: var(--orange);
+}
+
+.vo2-max {
+  background-color: var(--red);
+}
+
+.anaerobic-capacity {
+  background-color: var(--purple);
+}
+
+.bold {
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: fit-content;
+}
+
+@media screen and (max-width: 650px) {
+  table * {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  table * {
+    padding: 3px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  table * {
+    font-size: 11px;
+  }
+}

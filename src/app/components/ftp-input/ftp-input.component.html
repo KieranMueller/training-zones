@@ -1,0 +1,26 @@
+<div class="container">
+  <h3 class="title">
+    Functional Threshold Power
+    <img class="pulse" src="../../../../bolt.svg" alt="lightning bolt icon" />
+  </h3>
+  <div>
+    <input
+      type="number"
+      placeholder="243"
+      (input)="updateFtp($event)"
+      [(ngModel)]="ftp"
+    />
+    <span class="watts">watts</span>
+  </div>
+  <div>
+    <p class="bw">Body Weight (Optional)</p>
+    <input type="number" [(ngModel)]="bw" (input)="updateWkg()" />
+    <span>
+      lbs
+      <img class="arrow" src="../../../../arrow.png" alt="right arrow icon" />
+      <span [ngClass]="calculateWkgColor()"
+        >{{ wkg && isFinite(wkg) ? wkg : null }}w/kg</span
+      ></span
+    >
+  </div>
+</div>

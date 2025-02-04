@@ -1,0 +1,14 @@
+<div class="container">
+  <h3 class="title">
+    Max Heart Rate <img src="../../../../heart.svg" alt="heart icon" />
+  </h3>
+  <div>
+    <input
+      type="number"
+      (input)="updateMaxHr($event)"
+      placeholder="194"
+      [(ngModel)]="maxHr"
+    />
+    <span class="bpm">bpm</span>
+  </div>
+</div>
